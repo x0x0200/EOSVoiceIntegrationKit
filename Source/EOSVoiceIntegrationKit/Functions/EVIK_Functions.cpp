@@ -61,7 +61,7 @@ void UEVIK_Functions::LoginEOSVoiceChat(APlayerController* PlayerController, FSt
 			{
 				if(LocalVoiceSubsystem->EVIK_Local_GetVoiceChat())
 				{
-					LocalVoiceSubsystem->EVIK_Local_GetVoiceChat()->Login(0, PlayerName, "", FOnVoiceChatLoginCompleteDelegate::CreateLambda([Result](const FString& PlayerName, const FVoiceChatResult& Result1)
+					LocalVoiceSubsystem->EVIK_Local_GetVoiceChat()->Login(FPlatformUserId::CreateFromInternalId(0), PlayerName, "", FOnVoiceChatLoginCompleteDelegate::CreateLambda([Result](const FString& PlayerName, const FVoiceChatResult& Result1)
 					{
 						if(Result1.IsSuccess())
 						{
